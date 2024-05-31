@@ -43,7 +43,7 @@ const Signup = () => {
     console.log(data)
 
     try{
-      const res=await axios.post(`http://localhost:4000/signupapi`, data)
+      const res=await axios.post(`https://backend-stack-xi80.onrender.com/signupapi`, data)
       if(res.data.success)
         {
           alert("registration successfully")
