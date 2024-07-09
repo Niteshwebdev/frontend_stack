@@ -9,7 +9,7 @@ const Prodcutmanage = () => {
     const navigate = useNavigate();
 
     const showproduct=()=>{
-        fetch(`http://localhost:4000/showproductapi`)
+        fetch(`https://backend-stack-xi80.onrender.com/showproductapi`)
         .then((res) => res.json())
         .then((pr) => {
             setManageProduct(pr);
