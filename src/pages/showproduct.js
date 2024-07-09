@@ -17,7 +17,7 @@ const Showproduct = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/showproductapi`);
+      const response = await fetch(`https://backend-stack-xi80.onrender.com/showproductapi`);
       const data = await response.json();
       setProducts(data);
       setLoading(false);
