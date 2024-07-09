@@ -53,7 +53,7 @@ const Editproduct = () => {
                     data.append(key,productdata[key])
                 }
 
-                const res= await axios.post(`http://localhost:4000/updateproduct`,data)
+                const res= await axios.post(`https://backend-stack-xi80.onrender.com/updateproduct`,data)
 
                 if(res.status==200)
                     {
