@@ -95,7 +95,7 @@ const Signup = () => {
     <div className="form-group">
       <label htmlFor="role">Role:</label>
       <select name="role" value={data.role} onChange={accept} className="form-control" required>
-        <option value="user">User</option>
+        
         <option value="store_manager">Store Manager</option>
       </select>
     </div>
