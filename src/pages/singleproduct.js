@@ -12,7 +12,7 @@ const Singleproduct = () => {
       <div className="container">
         <div className="product-details">
           <img 
-            src={`http://localhost:4000/images/product/${product.pimage}`} 
+            src={`https://backend-stack-xi80.onrender.com/images/product/${product.pimage}`} 
             alt={product.name} 
             className="product-img" 
           />
