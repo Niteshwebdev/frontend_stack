@@ -51,7 +51,7 @@ const Showproduct = () => {
               >
                 <div className="product-card">
                   <img 
-                    src={`http://localhost:4000/images/product/${product.pimage}`} 
+                    src={`https://backend-stack-xi80.onrender.com/images/product/${product.pimage}`} 
                     className="product-img" 
                     alt={product.name} 
                   />
