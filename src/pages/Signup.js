@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import '../App.css';
 import { Link,  useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Loading from './loading';
 
 const Signup = () => {
 
+    const [loading,setloading]=useState(false)
    const Navigate = useNavigate();
   const [data,setdata]=useState({
     email: "",
@@ -30,7 +32,7 @@ const Signup = () => {
    
    const acceptpic=(e)=>{
        setdata((pre)=>({
-          ...pre,
+          ...pre, 
           profilePic: e.target.files[0] 
           
        }))
@@ -41,6 +43,7 @@ const Signup = () => {
    const handlesubmit=async(e)=>{
     e.preventDefault()
     console.log(data)
+    setloading(true)
 
     try{
       const res=await axios.post(`https://backend-stack-xi80.onrender.com/signupapi`, data)
@@ -49,10 +52,14 @@ const Signup = () => {
           alert("registration successfully")
           Navigate("/showproduct")
         }
+        
      
     }
     catch(err){
        console.log(err)
+    }
+    finally{
+      setloading(false)
     }
  }
 
@@ -63,6 +70,14 @@ const Signup = () => {
     return (
   
             <div className="container">
+
+      {loading ? (
+             <Loading loading={loading}/>
+      ):(
+            <div></div>
+      )}
+
+              
   <h2>User Registration</h2>
   <form action method="post" encType="multipart/form-data" onSubmit={handlesubmit}>
     <div className="form-group">
