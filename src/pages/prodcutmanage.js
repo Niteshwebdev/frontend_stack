@@ -31,7 +31,7 @@ const Prodcutmanage = () => {
         e.preventDefault();
         console.log("pid",uId)
         try{
-           const response=await axios.post("http://localhost:4000/deleteproduct",{uId})
+           const response=await axios.post("https://backend-stack-xi80.onrender.com/deleteproduct",{uId})
            console.log(response.data.message);
            alert(response.data.message);
            showproduct()
@@ -69,7 +69,7 @@ const Prodcutmanage = () => {
                                     <td>{value.name}</td>
                                     <td>{value.price}</td>
                                     <td>{value.des}</td>
-                                    <td><img src={`http://localhost:4000/images/product/${value.pimage}`} height="30%" width="30%" /></td>
+                                    <td><img src={`https://backend-stack-xi80.onrender.com/images/product/${value.pimage}`} height="30%" width="30%" /></td>
                                     <td><Link to={`/editproduct/${value._id}`} state={{value}} className="btn bg-success text-white">Edit</Link></td>
                                     <td><button onClick={(e)=>handledelete(e,value._id)} className="btn bg-danger text-white">Delete</button></td>
                                 </tr>
