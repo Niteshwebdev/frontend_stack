@@ -26,7 +26,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post(`http://localhost:4000/loginapi`, data);
+      const res = await axios.post(`https://backend-stack-xi80.onrender.com/loginapi`, data);
       if (res.status === 200) {
         alert("Login successfully");
         navigate("/showproduct");
